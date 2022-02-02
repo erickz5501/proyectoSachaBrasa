@@ -26,17 +26,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($categories as $category)
                             <tr>
-                                <td><h6>Nombre</h6></td>
+                                <td><h6>{{ $category->name }}</h6></td>
                                 <td class="text-center">
-                                    <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
+                                    <a href="javascript:void(0)" wire:click="Edit({{$category->id}})" class="btn btn-dark mtmobile" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar">
+                                    <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}')" class="btn btn-dark mtmobile" title="Eliminar">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     pagination
