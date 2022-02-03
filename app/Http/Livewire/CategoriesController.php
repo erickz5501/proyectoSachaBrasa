@@ -53,13 +53,7 @@ class CategoriesController extends Component
             'name' => 'required|unique:categories|min:3'
         ];
 
-        $messages = [
-            'name.required' => 'El nombre es requerido.',
-            'name.unique' => 'Ya existe la categoria.',
-            'name.min' => 'La categoria debe tener mas de 3 caracteres.'
-        ];
-
-        $this->validate($rules,$messages); //Ejecutamos las validaciones y los mensajes
+        $this->validate($rules); //Ejecutamos las validaciones y los mensajes
 
         $category = Category::create([ //Creamos la categoria
             'name' => $this->name
@@ -71,7 +65,17 @@ class CategoriesController extends Component
     }
 
     public function Update(){
-        
+        $rules =[
+            'name' => "required|unique:categories|min:3:categories,name{$this->selected_id}"                      
+        ];
+        $this->validate($rules); //Ejecutamos las validaciones y los mensajes
+
+        $category = Category::find($this->selected_id);
+        $category->Update([
+            'name'=> $this->name
+        ]); 
+        $this->resetUI();//Limpamos las cajas de texto delformulario
+        $this->emit('category-updated','Categoría Actualizada');//Cerramos el modal     
     }
 
     public function resetUI(){//Limpiamos los valores de las propiedades publicas
@@ -80,4 +84,20 @@ class CategoriesController extends Component
         $this->selected_id = 0;
 
     }
+    protected $listeners=[
+        'deleteRow'=>'Destroy'
+    ];    
+
+    public function Destroy(Category $category)
+    {
+     // $category = Category::find($id);
+      //dd($category);//testear si estamos enviando la categorioa
+      $category ->delete(); 
+      
+      
+      $this->resetUI();//Limpamos las cajas de texto delformulario
+      $this->emit('category-deleted','Categoría Eliminada');//Cerramos el modal        
+
+    }
+
 }

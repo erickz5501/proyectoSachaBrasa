@@ -33,7 +33,8 @@
                                     <a href="javascript:void(0)" wire:click="Edit({{$category->id}})" class="btn btn-dark mtmobile" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}')" class="btn btn-dark mtmobile" title="Eliminar">
+
+                                    <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}' , '{{$category->products->count()}}')" class="btn btn-dark mtmobile" title="Eliminar">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
@@ -60,7 +61,38 @@
         window.livewire.on('category-added', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
         });
-        
+        window.livewire.on('category-updated', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+
     });
+
+
+ 
+    function Confirm(id, products) 
+    {
+        if(products > 0 )
+        {
+            swal('No se puede eliminar la categoria porque tiene productos relacionados, primero tienes que eliminar el producto relacionado')
+            return;
+        }
+        swal({
+            title: 'CONFIRMAR',
+            text: '¿DECEAS ELIMINAR EL REGISTRO?',
+            type:   'warning',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Eliminar',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff'
+        }).then(function(result){
+            if(result.value){
+                window.livewire.emit('deleteRow', id)
+                swal.close()
+            }
+        })
+        
+    }
+
 </script>
 {{-- @endsection --}}
