@@ -39,7 +39,7 @@
                                         <td><h6> {{$product->description}}</h6></td>
                                         <td><h6>S/. {{$product->price}}</h6></td>
                                         <td><h6> {{$product->stock}} </h6></td>
-                                        <td><h6> {{$product->category_id}} </h6></td>
+                                        <td><h6> {{$product->category->name}} </h6></td>
                                         <td class="text-left">
                                             <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
                                                 <i class="fas fa-edit"></i>
