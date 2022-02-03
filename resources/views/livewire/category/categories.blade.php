@@ -71,7 +71,38 @@
         window.livewire.on('category-added', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
         });
-        
+        window.livewire.on('category-updated', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+
     });
+
+
+ 
+    function Confirm(id, products) 
+    {
+        if(products > 0 )
+        {
+            swal('No se puede eliminar la categoria porque tiene productos relacionados, primero tienes que eliminar el producto relacionado')
+            return;
+        }
+        swal({
+            title: 'CONFIRMAR',
+            text: '¿DECEAS ELIMINAR EL REGISTRO?',
+            type:   'warning',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Eliminar',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff'
+        }).then(function(result){
+            if(result.value){
+                window.livewire.emit('deleteRow', id)
+                swal.close()
+            }
+        })
+        
+    }
+
 </script>
 {{-- @endsection --}}

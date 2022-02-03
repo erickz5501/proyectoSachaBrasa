@@ -8,9 +8,9 @@
         <span class="fas fa-edit text-dark">
         </span>
       </span>
-      <input type="text" wire:model.lazy="name" class="form-control" placeholder="Ingrese la categoria" style="color:black;">
+      <input type="text" wire:model.lazy="name" class="form-control" placeholder="Ingrese nombre de la categoria" style="color:black;">
     </div>
-      @error('nombre')  
+      @error('name')  
         <span class="text-danger">{{$message}}</span> 
       @enderror
   </div>
