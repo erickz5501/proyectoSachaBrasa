@@ -10,35 +10,46 @@
                 </h4>
                 <ul class="tabs tab-pills">
                     <li>
-                        <a href="javascript:void(0);" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
+                        <button href="javascript:void(0);" class="btn btn-dark px-3 py-2" data-toggle="modal" data-target="#theModal" type="button">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Agregar</span>
+                        </button>
                     </li>
                 </ul>
             </div>
+
             @include('common.searchbox')
+
             <div class="widget-content">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped mt-1">
+                    <table class="table table-bordered  mt-1">
                         <thead class="text-white" style=" background: #3B3F5C ">
-                            <tr>
+                            <tr class="text-center">
                                 <th class="table-th text-white">Descripción</th>
                                 <th class="table-th text-white">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($categories as $category)
+                            @if(count($categories) > 0)
+                                @foreach($categories as $category)
+                                <tr>
+                                    <td class="text-center" ><h6>{{ $category->name }}</h6></td>
+                                    <td class="text-center">
+                                        <a href="javascript:void(0)" wire:click="Edit({{$category->id}})" class="btn btn-dark mtmobile" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}')" class="btn btn-dark mtmobile" title="Eliminar">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            @else
                             <tr>
-                                <td><h6>{{ $category->name }}</h6></td>
-                                <td class="text-center">
-                                    <a href="javascript:void(0)" wire:click="Edit({{$category->id}})" class="btn btn-dark mtmobile" title="Editar">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}')" class="btn btn-dark mtmobile" title="Eliminar">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </td>
+                                <td class="text-left" colspan="2"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
                             </tr>
-                            @endforeach
+                            @endif
                         </tbody>
                     </table>
                     {{ $categories->links() }}
