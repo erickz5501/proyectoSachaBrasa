@@ -7,11 +7,16 @@
                 </h4>
                 <ul class="tabs tab-pills">
                     <li>
-                        <a href="javascript:void(0);" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
+                        <button href="javascript:void(0);" class="btn btn-dark px-3 py-2" data-toggle="modal" data-target="#theModal" type="button">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Agregar</span>
+                        </button>
                     </li>
                 </ul>
             </div>
-            searh
+            
+            @include('common.searchbox')
+
             <div class="widget-content">
 
                 <div class="table-responsive">
