@@ -9,6 +9,7 @@
 <!-- END GLOBAL MANDATORY STYLES -->
 
 <link rel="stylesheet" href=" {{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" type="text/css" />
+<link rel="stylesheet" href=" {{ asset('/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
 <link rel="stylesheet" href=" {{ asset('css/fontawesome.css') }}" type="text/css" />
 <link rel="stylesheet" href=" {{ asset('assets/css/elements/avatar.css') }}" type="text/css" />
 <link rel="stylesheet" href=" {{ asset('plugins/sweetalerts/sweetalert.css') }} ">

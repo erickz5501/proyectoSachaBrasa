@@ -41,18 +41,26 @@
                             @endforeach
                         </tbody>
                     </table>
-                    pagination
+                    {{ $categories->links() }}
                 </div>
 
             </div>
         </div>
     </div>
-    Include form
+    @include('livewire.category.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
 
+        window.livewire.on('show-modal', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('show');
+        });
+
+        window.livewire.on('category-added', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+        
     });
 </script>
 {{-- @endsection --}}
