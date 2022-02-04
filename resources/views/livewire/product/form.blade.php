@@ -70,13 +70,13 @@
         <label class="form-label text-black"> Categoria</label>
         <div class="input-group mb-3">
             {{-- <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;"> --}}
-            <select wire:model='categoryid' class="form-control">
+            <select wire:model='category_id' class="form-control">
                 <option value="Elegir" disabled>Elegir</option>
                 @foreach($categories as $category)
                 <option value=" {{$category->id}} "> {{$category->name}}</option>
                 @endforeach
             </select>
-            @error('categoryid')  
+            @error('category_id')  
             <span class="text-danger">{{$message}}</span> 
             @enderror
         </div>
