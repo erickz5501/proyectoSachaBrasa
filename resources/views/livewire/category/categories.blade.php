@@ -24,7 +24,7 @@
 
                 <div class="table-responsive">
                     <table class="table table-bordered  mt-1">
-                        <thead class="text-white" style=" background: #3B3F5C ">
+                        <thead class="text-white" style=" background: #e05f1a ">
                             <tr class="text-center">
                                 <th class="table-th text-white">Descripción</th>
                                 <th class="table-th text-white">Acciones</th>

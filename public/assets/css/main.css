@@ -405,7 +405,7 @@ select.form-control.form-custom {
   padding: 0.4375rem 1.25rem;
   text-shadow: none;
   font-size: 14px;
-  color: #3b3f5c;
+  color: #e05f1a;
   font-weight: normal;
   white-space: normal;
   word-wrap: break-word;
@@ -884,15 +884,15 @@ select.form-control.form-custom {
 
 .btn-dark {
   color: #fff !important;
-  background-color: #3b3f5c;
-  border-color: #3b3f5c; }
+  background-color: #E51504 ;
+  border-color: #E51504 ; }
   .btn-dark:hover, .btn-dark:focus {
     color: #fff !important;
-    background-color: #3b3f5c;
+    background-color: #e05f1a ;/*al pasar el cursor*/
     box-shadow: none;
-    border-color: #3b3f5c; }
+    border-color: #e05f1a ; }/*al pasar el cursor*/
   .btn-dark:active, .btn-dark.active {
-    background-color: #3b3f5c;
+    background-color: ;
     border-top: 1px solid #3b3f5c; }
   .btn-dark:not(:disabled):not(.disabled).active, .btn-dark:not(:disabled):not(.disabled):active {
     color: #fff !important;
