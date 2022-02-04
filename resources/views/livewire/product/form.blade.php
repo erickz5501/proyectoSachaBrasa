@@ -4,11 +4,6 @@
     <div class="col-sm-12">
         <label class="form-label text-black"> Nombre</label>
         <div class="input-group mb-3">
-        <span class="input-group-text">
-            <span class="fas fa-edit text-dark">
-            </span>
-        </span>
-        
         <input type="text" wire:model.lazy="name" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;">
         </div>
         @error('name')  
@@ -23,6 +18,18 @@
         <div class="input-group mb-3">
         <textarea class="form-control" placeholder="Descripción del producto" wire:model.lazy="description" ></textarea>
         {{-- <input type="text" wire:model.lazy="name" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;"> --}}
+        </div>
+        @error('description')  
+            <span class="text-danger">{{$message}}</span> 
+        @enderror
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <label class="form-label text-black"> Alertas / Inv. Minimo</label>
+        <div class="input-group mb-3">
+        <input type="number" wire:model.lazy="alerts" class="form-control" placeholder="10" style="color:black;">
         </div>
         @error('description')  
             <span class="text-danger">{{$message}}</span> 
@@ -66,7 +73,13 @@
                 <span class="fas fa-edit text-dark">
                 </span>
             </span>
-            <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;">
+            {{-- <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;"> --}}
+            <select class="form-control">
+                <option value="Elegir" disabled>Elegir</option>
+                @foreach($categories as $category)
+                <option value=" {{$category->id}} "> {{$category->name}}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 </div>
