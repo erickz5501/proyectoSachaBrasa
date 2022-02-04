@@ -78,9 +78,6 @@
         window.livewire.on('product-updated', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
         });
-        window.livewire.on('product-deleted', msg => {//Abre el modal con la data del registro
-            //noty
-        });
         window.livewire.on('modal-show', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('show');
         });
@@ -91,5 +88,25 @@
             $('.er').css('display', 'none');
         });
     });
+
+    function Confirm(id) 
+    {
+        swal({
+            title: 'CONFIRMAR',
+            text: '¿DECEAS ELIMINAR EL REGISTRO?',
+            type:   'warning',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Eliminar',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff'
+        }).then(function(result){
+            if(result.value){
+                window.livewire.emit('deleteRow', id)
+                swal.close()
+            }
+        })
+        
+    }
 
 </script>
