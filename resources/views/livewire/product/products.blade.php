@@ -23,23 +23,25 @@
                     <table class="table table-bordered table-striped mt-1" style="text-align:center;">
                         <thead class="text-white" style=" background: #e05f1a ">
                             <tr >
-                                <th class="table-th text-white">Nombre</th>
-                                <th class="table-th text-white">Descripción</th>
-                                <th class="table-th text-white">Precio</th>
-                                <th class="table-th text-white">Stock</th>
-                                <th class="table-th text-white">Categoria</th>
-                                <th class="table-th text-white">Acciones</th>
+                                <th class="table-th text-white text-center">Nombre</th>
+                                <th class="table-th text-white text-center">Descripción</th>
+                                <th class="table-th text-white text-center">Precio</th>
+                                <th class="table-th text-white text-center">Stock</th>
+                                <th class="table-th text-white text-center">Categoria</th>
+                                <th class="table-th text-white text-center">Alertas</th>
+                                <th class="table-th text-white text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if( count($products) > 0 )
-                                @foreach($products as $product)
+                            @if( count($data) > 0 )
+                                @foreach($data as $product)
                                     <tr>
                                         <td><h6> {{$product->name}}</h6></td>
-                                        <td><h6> {{$product->description}}</h6></td>
-                                        <td><h6>S/. {{$product->price}}</h6></td>
-                                        <td><h6> {{$product->stock}} </h6></td>
-                                        <td><h6> {{$product->category->name}} </h6></td>
+                                        <td ><h6 class="text-center"> {{$product->description}}</h6></td>
+                                        <td><h6 class="text-center">S/. {{$product->price}}</h6></td>
+                                        <td><h6 class="text-center"> {{$product->stock}} </h6></td>
+                                        <td><h6 class="text-center"> {{$product->category}} </h6></td>
+                                        <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
                                         <td class="text-left">
                                             <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
                                                 <i class="fas fa-edit"></i>
@@ -58,7 +60,7 @@
                             
                         </tbody>
                     </table>
-                    {{$products->links()}}
+                    {{$data->links()}}
                 </div>
 
             </div>
