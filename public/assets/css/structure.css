@@ -268,7 +268,7 @@ code {
   list-style: none; }
 
 .header-container .sidebarCollapse {
-  color: #5c1ac3; }
+  color: #F2480D ; }
   .header-container .sidebarCollapse svg {
     width: 27px;
     height: 27px; }
@@ -588,7 +588,7 @@ code {
   margin-left: 35px; }
   .navbar .navbar-item .nav-item.search-animated svg {
     cursor: pointer;
-    color: rgba(92, 26, 195, 0.47);
+    color: rgba(226, 79, 10, 0.47);
     position: absolute;
     width: 20px;
     height: 20px;
@@ -597,11 +597,11 @@ code {
 
 .navbar .navbar-item .nav-item form.form-inline input.search-form-control {
   font-size: 15px;
-  background-color: rgba(92, 26, 195, 0.0901961);
+  background-color: rgba(207, 74, 12, 0.09);
   padding-right: 40px;
   padding-top: 12px;
   border: none;
-  color: #3b3f5c;
+  color: #000000 ;
   box-shadow: none;
   border-radius: 30px; }
 

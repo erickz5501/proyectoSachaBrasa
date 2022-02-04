@@ -31,8 +31,8 @@
     .page-item.active .page-link {
         z-index: 3;
         color: #fff;
-        background-color: #3b3f5c;
-        border-color: #3b3f5c;
+        background-color: #e05f1a;
+        border-color: #e05f1a;
     }
 
     @media(max-width:480px){
@@ -49,5 +49,8 @@
             display: block;
         }
     }
+
+
+
 </style>
 @livewireStyles
