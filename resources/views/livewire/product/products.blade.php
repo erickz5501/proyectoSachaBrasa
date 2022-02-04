@@ -43,10 +43,10 @@
                                         <td><h6 class="text-center"> {{$product->category}} </h6></td>
                                         <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
                                         <td class="text-left">
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar" wire:click.prevent="Edit({{$product->id}})" >
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar">
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar" onclick="Confirm(' {{$product->id}} ')" >
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -54,7 +54,7 @@
                                 @endforeach
                             @else
                             <tr>
-                                <td class="text-left" colspan="6"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
+                                <td class="text-left" colspan="7"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
                             </tr>
                             @endif
                             

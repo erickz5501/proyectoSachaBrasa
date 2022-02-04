@@ -79,6 +79,50 @@ class ProductsController extends Component
         $this-> resetUI(); 
         $this-> emit('product-added', 'Producto Reguistrado');
     }
+
+    public function Edit(Product $product){
+        
+        $this->selected_id = $product->id;
+        $this->name = $product->name;
+        $this->description = $product->description;
+        $this->price = $product->price;
+        $this->stock = $product->stock;
+        $this->alerts = $product->alerts;
+        $this->category_id = $product->category_id;
+        //dd($product);
+        $this->emit('modal-show' , 'Show modal');
+
+    }
+
+    public function Update(){
+        
+        $rules= [
+            'name' => "required|min:3",
+            'description' => 'required',
+            'price' => 'required',
+            'stock' => 'required',
+            'alerts' => 'required',
+            'category_id' => 'required|not_in:Elegir'
+
+        ];
+        $this->validate($rules);
+
+        $product = Product::find($this->selected_id);
+        $product -> update([
+            'name' => $this->name,
+            'description' => $this->description,
+            'price' => $this->price,
+            'stock' => $this->stock,
+            'alerts' => $this->alerts,
+            'category_id' => $this->category_id
+        ]);
+
+        $product->save();
+        $this-> resetUI(); 
+        $this-> emit('product-updated', 'Producto Actualizado');
+
+    }
+
     public function resetUI(){//Limpiamos los valores de las propiedades publicas
         $this->name = '';
         $this->description = '';
