@@ -38,7 +38,7 @@
             S/. 
         </span>
         {{-- <input type="text" wire:model.lazy="price" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;"> --}}
-        <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="S/.100.00">
+        <input class="form-control" type="text" wire:model.lazy="price" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" placeholder="100.00">
         </div>
         @error('price')  
             <span class="text-danger">{{$message}}</span> 
@@ -62,15 +62,12 @@
     <div class="col-sm-4">
         <label class="form-label text-black"> Categoria</label>
         <div class="input-group mb-3">
-        <span class="input-group-text">
-            <span class="fas fa-edit text-dark">
+            <span class="input-group-text">
+                <span class="fas fa-edit text-dark">
+                </span>
             </span>
-        </span>
-        <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;">
+            <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;">
         </div>
-        @error('category_id')  
-            <span class="text-danger">{{$message}}</span> 
-        @enderror
     </div>
 </div>
 
