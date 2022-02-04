@@ -7,7 +7,7 @@
                 </h4>
                 <ul class="tabs tab-pills">
                     <li>
-                        <button href="javascript:void(0);" class="btn btn-dark px-3 py-2" data-toggle="modal" data-target="#theModal" type="button">
+                        <button href="javascript:void(0);" class="btn px-3 py-2 text-white" data-toggle="modal" data-target="#theModal" type="button" style=" background:#e05f1a" ">
                             <i class="fas fa-plus-circle"></i>
                             <span>Agregar</span>
                         </button>
@@ -52,7 +52,7 @@
                                 @endforeach
                             @else
                             <tr>
-                                <td class="text-left" colspan="2"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
+                                <td class="text-left" colspan="6"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
                             </tr>
                             @endif
                             
@@ -64,11 +64,12 @@
             </div>
         </div>
     </div>
-    Include form
+    @include('livewire.product.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
 
     });
-  </script>
+
+</script>

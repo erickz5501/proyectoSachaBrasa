@@ -38,4 +38,9 @@ class ProductsController extends Component
         ->extends('layouts.theme.app')
         ->section('content');
     }
+
+    public function resetUI(){
+        
+    }
+
 }
