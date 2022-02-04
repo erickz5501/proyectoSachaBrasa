@@ -97,7 +97,7 @@ class ProductsController extends Component
         $product->delete();
 
         $this ->resetUI();
-        $this ->emit('product-deleted', 'Producto eliminado');
+        $this ->emit('product-deleted', 'Producto eliminado xd');
     }
 
 

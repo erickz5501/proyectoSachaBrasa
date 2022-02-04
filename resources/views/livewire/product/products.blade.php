@@ -43,7 +43,7 @@
                                         <td><h6 class="text-center"> {{$product->category}} </h6></td>
                                         <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
                                         <td class="text-left">
-                                            <a href="javascript:void(0)" wire:click.prevent="Edit({{$product->id}})" class="btn btn-dark mtmobile" title="Edit">
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <a href="javascript:void(0)" onclick="Confirm({{$product->id}})" class="btn btn-dark mtmobile" title="Eliminar">
