@@ -54,4 +54,41 @@ class ProductsController extends Component
         ->section('content');
     }
 
+    public function Store()
+    {
+        $rules= [
+            'name' => 'required|unique:products|min:3',
+            'description' => 'required',
+            'price' => 'required',
+            'stock' => 'required',
+            'alerts' => 'required',
+            'category_id' => 'required|not_in:Elegir'
+
+        ];
+        $this->validate($rules);
+
+        $product = Product::create([
+            'name' => $this->name,
+            'description' => $this->description,
+            'price' => $this->price,
+            'stock' => $this->stock,
+            'alerts' => $this->alerts,
+            'category_id' => $this->category_id
+        ]);
+        $product->save();
+        $this-> resetUI(); 
+        $this-> emit('product-added', 'Producto Reguistrado');
+    }
+    public function resetUI(){//Limpiamos los valores de las propiedades publicas
+        $this->name = '';
+        $this->description = '';
+        $this->price = '';
+        $this->stock = '';
+        $this->alerts = '';
+        $this->category_id = '';
+        $this->search = '';
+        $this->selected_id = 0;
+
+    }
+
 }

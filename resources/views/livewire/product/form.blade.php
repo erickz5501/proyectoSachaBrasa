@@ -74,12 +74,15 @@
                 </span>
             </span>
             {{-- <input type="text" wire:model.lazy="category_id" class="form-control" placeholder="Ingrese nombre del producto" style="color:black;"> --}}
-            <select class="form-control">
+            <select wire:model='category_id' class="form-control">
                 <option value="Elegir" disabled>Elegir</option>
                 @foreach($categories as $category)
                 <option value=" {{$category->id}} "> {{$category->name}}</option>
                 @endforeach
             </select>
+            @error('category_id')  
+            <span class="text-danger">{{$message}}</span> 
+        @enderror
         </div>
     </div>
 </div>

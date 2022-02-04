@@ -28,7 +28,7 @@
                                 <th class="table-th text-white text-center">Precio</th>
                                 <th class="table-th text-white text-center">Stock</th>
                                 <th class="table-th text-white text-center">Categoria</th>
-                                <th class="table-th text-white text-center">Alertas</th>
+                                <th class="table-th text-white text-center">Inv. Min</th>
                                 <th class="table-th text-white text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -71,7 +71,25 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
-
+        
+        window.livewire.on('product-added', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+        window.livewire.on('product-updated', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+        window.livewire.on('product-deleted', msg => {//Abre el modal con la data del registro
+            //noty
+        });
+        window.livewire.on('modal-show', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('show');
+        });
+        window.livewire.on('product-hide', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+        });
+        window.livewire.on('hidden.bs.modal', msg => {//Abre el modal con la data del registro
+            $('.er').css('display', 'none');
+        });
     });
 
 </script>

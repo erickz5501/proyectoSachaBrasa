@@ -148,7 +148,10 @@ return [
 
     'attributes' => [
         'name' => 'nombre',
-        
+        'description' => 'descripción',
+        'price' => 'precio',
+        'alerts' => 'inv. Min',
+        'category_id' => 'categoria'
     ],
 
 ];
