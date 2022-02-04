@@ -39,12 +39,10 @@
                                         <a href="javascript:void(0)" wire:click="Edit({{$category->id}})" class="btn btn-dark mtmobile" title="Editar">
                                             <i class="fas fa-edit"></i>
                                         </a>
-
-                                        @if($category->products->count() < 1)
+               
                                         <a href="javascript:void(0)" onclick="Confirm('{{$category->id}}', '{{$category->products->count()}}')" class="btn btn-dark mtmobile" title="Eliminar">
                                             <i class="fas fa-trash"></i>
                                         </a>
-                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
