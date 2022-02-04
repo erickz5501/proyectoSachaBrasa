@@ -23,7 +23,7 @@
             <div class="widget-content">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered  mt-1">
+                    <table class="table table-bordered  mt-1" style="text-align:center;">
                         <thead class="text-white" style=" background: #e05f1a ">
                             <tr class="text-center">
                                 <th class="table-th text-white">Descripción</th>

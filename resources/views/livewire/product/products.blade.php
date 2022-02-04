@@ -20,9 +20,9 @@
             <div class="widget-content">
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped mt-1">
-                        <thead class="text-white" style=" background: #3B3F5C ">
-                            <tr>
+                    <table class="table table-bordered table-striped mt-1" style="text-align:center;">
+                        <thead class="text-white" style=" background: #e05f1a ">
+                            <tr >
                                 <th class="table-th text-white">Nombre</th>
                                 <th class="table-th text-white">Descripción</th>
                                 <th class="table-th text-white">Precio</th>
