@@ -85,10 +85,20 @@ class ProductsController extends Component
         $this->price = '';
         $this->stock = '';
         $this->alerts = '';
-        $this->category_id = '';
+        $this->category_id = 'Elegir';
         $this->search = '';
         $this->selected_id = 0;
 
     }
+    protected $listeners = ['deleteRow'=> 'Destroy'];
+
+    public function Destroy(Product $product)
+    {
+        $product->delete();
+
+        $this ->resetUI();
+        $this ->emit('product-deleted', 'Producto eliminado');
+    }
+
 
 }

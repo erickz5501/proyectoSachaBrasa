@@ -43,10 +43,10 @@
                                         <td><h6 class="text-center"> {{$product->category}} </h6></td>
                                         <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
                                         <td class="text-left">
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar">
+                                            <a href="javascript:void(0)" wire:click.prevent="Edit({{$product->id}})" class="btn btn-dark mtmobile" title="Edit">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar">
+                                            <a href="javascript:void(0)" onclick="Confirm({{$product->id}})" class="btn btn-dark mtmobile" title="Eliminar">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -78,9 +78,6 @@
         window.livewire.on('product-updated', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
         });
-        window.livewire.on('product-deleted', msg => {//Abre el modal con la data del registro
-            //noty
-        });
         window.livewire.on('modal-show', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('show');
         });
@@ -91,5 +88,25 @@
             $('.er').css('display', 'none');
         });
     });
+
+    function Confirm(id) 
+    {
+        swal({
+            title: 'CONFIRMAR',
+            text: '¿DECEAS ELIMINAR EL REGISTRO?',
+            type:   'warning',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Eliminar',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff'
+        }).then(function(result){
+            if(result.value){
+                window.livewire.emit('deleteRow', id)
+                swal.close()
+            }
+        })
+        
+    }
 
 </script>
