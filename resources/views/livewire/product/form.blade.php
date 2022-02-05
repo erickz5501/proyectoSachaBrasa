@@ -73,7 +73,7 @@
             <select wire:model='category_id' class="form-control">
                 <option value="Elegir" disabled>Elegir</option>
                 @foreach($categories as $category)
-                <option value=" {{$category->id}} "> {{$category->name}}</option>
+                <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
             @error('category_id')  
