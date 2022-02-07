@@ -12,7 +12,7 @@ class CoinsController extends Component
 {
     use WithPagination;
     public $type, $value, $componentName, $pagetitle, $search, $selected_id; 
-    private $pagination = 10;
+    private $pagination = 5;
 
     public function mount()
     {
