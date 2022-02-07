@@ -28,3 +28,4 @@ Route::get('categories', CategoriesController::class); //Creamos el nombre de la
 Route::get('products', ProductsController::class);
 Route::get('coins', CoinsController::class);
 Route::get('pos', PosController::class);
+//sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf cambios del gordo
