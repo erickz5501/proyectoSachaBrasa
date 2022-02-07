@@ -2,7 +2,7 @@
     <nav id="compactSidebar">
         <ul class="menu-categories">
 
-            <li class="menu activate nav-item">
+            <li class="activate nav-item">
                 <a href="{{url('categories')}}" class="menu-toggle nav-link" data-active="true">
                     <div class="base-menu">
                         <div class="base-icons">
@@ -12,7 +12,7 @@
                     </div>
                 </a>
             </li>
-            <li class="menu">
+            <li class="">
                 <a href="{{url('products')}}" class="menu-toggle" data-active="false">
                     <div class="base-menu">
                         <div class="base-icons">
@@ -22,8 +22,8 @@
                     </div>
                 </a>
             </li>
-            <li class="menu">
-                <a href="#" class="menu-toggle" data-active="false">
+            <li class="">
+                <a href=" {{ url('pos')}} " class="menu-toggle" data-active="false">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>                        
