@@ -72,7 +72,7 @@
                     </div>
                 </a>
             </li>
-            <li class="menu">
+            <li>
                 <a href="{{url('coins')}}" class="menu-toggle" data-active="false">
                     <div class="base-menu">
                         <div class="base-icons">
