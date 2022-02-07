@@ -20,6 +20,7 @@ class CategoriesController extends Component
     public function mount(){ //Este metodo se usa para iniciar propiedades
         $this->pagetitle='Listado';
         $this->componentName='Categoria';
+        $this->selected_id= 0;
         //$this->search='a';
     }
 

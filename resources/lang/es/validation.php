@@ -151,7 +151,9 @@ return [
         'description' => 'descripción',
         'price' => 'precio',
         'alerts' => 'inv. Min',
-        'category_id' => 'categoria'
+        'category_id' => 'categoria',
+        'value' => 'valor',
+        'type' => 'Tipo'
     ],
 
 ];

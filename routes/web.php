@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\CategoriesController; //Importamos el componente de categorias
 use App\Http\Livewire\ProductsController;
+use App\Http\Livewire\CoinsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('categories', CategoriesController::class); //Creamos el nombre de la ruta del componente y va a ejecutar la funcion render del controlador;
 Route::get('products', ProductsController::class);
+Route::get('coins', CoinsController::class);
