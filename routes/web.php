@@ -5,6 +5,7 @@ use App\Http\Livewire\CategoriesController; //Importamos el componente de catego
 use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\PosController;
+use App\Http\Livewire\SettingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +29,5 @@ Route::get('categories', CategoriesController::class); //Creamos el nombre de la
 Route::get('products', ProductsController::class);
 Route::get('coins', CoinsController::class);
 Route::get('pos', PosController::class);
+Route::get('settings', SettingsController::class);
 //sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf cambios del gordo
