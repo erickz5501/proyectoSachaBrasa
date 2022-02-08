@@ -12,7 +12,7 @@ class PosController extends Component
 
     use WithPagination;
 
-    public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $pagetitle, $componentName;
+    public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $pagetitle, $componentName, $cart=[], $itemsQuantity;
     private $pagination = 5;
 
     

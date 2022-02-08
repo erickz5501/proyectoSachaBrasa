@@ -1,5 +1,5 @@
 <div wire:ignore.self class="modal fade" tabindex="-1" role="dialog" id="theModalSale">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header bg-dark">
             <h5 class="modal-title text-white">
