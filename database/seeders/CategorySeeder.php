@@ -18,13 +18,19 @@ class CategorySeeder extends Seeder
             'name'=> 'Pollo a la Brasa'
         ]);
         Category::create([
-            'name'=> 'Hambuerguesa'
+            'name'=> 'Promos'
+        ]);
+        Category::create([
+            'name'=> 'Guarniciones'
+        ]);
+        Category::create([
+            'name'=> 'Mostritos'
+        ]);
+        Category::create([
+            'name'=> 'Hamburguesas'
         ]);
         Category::create([
             'name'=> 'Alitas'
-        ]);
-        Category::create([
-            'name'=> 'Chaufas'
         ]);
         Category::create([
             'name'=> 'Bebidas'

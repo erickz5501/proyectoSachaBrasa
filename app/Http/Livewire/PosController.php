@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Sale;
+use App\Models\Product;
 use Livewire\WithPagination;
 
 class PosController extends Component
@@ -14,9 +15,16 @@ class PosController extends Component
     public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $pagetitle, $componentName;
     private $pagination = 5;
 
+    
+    
+    public function paginationView(){ //Paginacion personalizada
+        return 'vendor.livewire.bootstrap';
+    }
+
     public function render()
     {
-        return view('livewire.pos.component')->extends('layouts.theme.app')->section('content');
+        $products = Product::orderBy('products.name', 'asc')->paginate($this->pagination);
+        return view('livewire.pos.component',['products'=>$products])->extends('layouts.theme.app')->section('content');
     }
 
     public function mount(){
