@@ -109,7 +109,7 @@
                      </div>
                      <div>
                         <ul class="list-group">
-                           <a href="">
+                           <a href="{{ url('products') }}">
                               <b>
                                  <li class="list-group-item">
                                     Productos
