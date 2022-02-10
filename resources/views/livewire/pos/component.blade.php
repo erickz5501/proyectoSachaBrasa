@@ -47,44 +47,51 @@
                                     <b> Productos </b>
                                 </h4>
                             </div>
-                            
-                            {{-- @include('common.searchbox') --}}
                 
                             <div class="widget-content">
                 
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped mt-1" style="text-align:center;">
-                                        <thead class="text-white" style=" background: #e05f1a ">
-                                            <tr >
-                                                <th class="table-th text-white text-center">Nombre</th>
-                                                <th class="table-th text-white text-center">Descripción</th>
-                                                <th class="table-th text-white text-center">Precio</th>
-                                                <th class="table-th text-white text-center">Stock</th>
-                                                <th class="table-th text-white text-center">Categoria</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if( count($products) > 0 )
-                                                @foreach($products as $product)
-                                                    <tr>
-                                                        <td><h6> {{$product->name}}</h6></td>
-                                                        <td ><h6 class="text-center"> {{$product->description}}</h6></td>
-                                                        <td><h6 class="text-center">S/. {{$product->price}}</h6></td>
-                                                        <td><h6 class="text-center"> {{$product->stock}} </h6></td>
-                                                        <td><h6 class="text-center"> {{$product->category->name}} </h6></td>
+                                <ul class="nav nav-tabs">
+                                    @foreach($categories as $category)
+                                    <li class="nav-item">
+                                        <a data-toggle="tab" href="#cat{{$category->id}}" type="button" class="nav-link">{{$category->name}}</a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                
+                                <div class="tab-content">
+                                    @foreach($categories as $category)
+                                    <div id="cat{{$category->id}}" class="tab-pane fade">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped mt-1" style="text-align:center;">
+                                                <thead class="text-white" style=" background: #e05f1a ">
+                                                    <tr >
+                                                        <th class="table-th text-white text-center">Nombre</th>
+                                                        <th class="table-th text-white text-center">Descripción</th>
+                                                        <th class="table-th text-white text-center">Precio</th>
+                                                        <th class="table-th text-white text-center">Stock</th>
+                                                        <th class="table-th text-white text-center">Inv. Min</th>
                                                     </tr>
-                                                @endforeach
-                                            @else
-                                            <tr>
-                                                <td class="text-left" colspan="7"><span class="d-block p-2 bg-warning text-white">SIN REGISTROS...</span></td>
-                                            </tr>
-                                            @endif
-                                            
-                                        </tbody>
-                                    </table>
-                                    {{$products->links()}}
+                                                </thead>
+                                                <tbody>
+                                                        @foreach($products as $product)
+                                                            @if($product->category->id == $category->id)
+                                                                <tr>
+                                                                    <td><h6> {{$product->name}}</h6></td>
+                                                                    <td ><h6 class="text-center"> {{$product->description}}</h6></td>
+                                                                    <td><h6 class="text-center">S/. {{$product->price}}</h6></td>
+                                                                    <td><h6 class="text-center"> {{$product->stock}} </h6></td>
+                                                                    <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
+                                                                </tr>
+                                                             @endif
+                                                        @endforeach
+                                                </tbody>
+                                            </table>
+                                            {{-- {{$products->links()}} --}}
+                                        </div>
+                                    </div>
+                                @endforeach
                                 </div>
-                
+            
                             </div>
                         </div>
                     </div>
@@ -117,6 +124,10 @@
       font-size: 25px;
       color: black;
       background-color: #07ad3f;
+      border-radius: 15px;
+      border: none!important;
+      outline: none!important;
+      
     }
     .boton_2:hover{
       color: #000000;
