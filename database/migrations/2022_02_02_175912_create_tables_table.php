@@ -15,6 +15,8 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255);
+            $table->enum('status',['OCUPADO', 'DESOCUPADO'])->default('DESOCUPADO');
             $table->timestamps();
         });
     }

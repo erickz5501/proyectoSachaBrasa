@@ -14,6 +14,23 @@ class TablesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Tables::create([
+            'name'=>'Mesa 01'
+        ]);
+        Tables::create([
+            'name'=>'Mesa 02'
+        ]);
+        Tables::create([
+            'name'=>'Mesa 03'
+        ]);
+        Tables::create([
+            'name'=>'Mesa 04'
+        ]);
+        Tables::create([
+            'name'=>'Mesa 05'
+        ]);
+        Tables::create([
+            'name'=>'Mesa 06'
+        ]);
     }
 }

@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Sale;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Tables;
 use Livewire\WithPagination;
 
 class PosController extends Component
@@ -26,7 +27,8 @@ class PosController extends Component
     {
         $products = Product::all();
         $categories = Category::all();
-        return view('livewire.pos.component', ['products'=>$products, 'categories'=>$categories])->extends('layouts.theme.app')->section('content');
+        $tables = Tables::all();
+        return view('livewire.pos.component', ['products'=>$products, 'categories'=>$categories, 'tables'=>$tables])->extends('layouts.theme.app')->section('content');
     }
 
     public function mount(){

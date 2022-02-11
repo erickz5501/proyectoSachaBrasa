@@ -22,8 +22,10 @@ class CreateSalesTable extends Migration
             $table->enum('status', ['PAGADO', 'PENDIENTE'])->nullable()->default('PAGADO');
 
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('tables_id');
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('tables_id')->references('id')->on('tables');
             $table->timestamps();
         });
     }

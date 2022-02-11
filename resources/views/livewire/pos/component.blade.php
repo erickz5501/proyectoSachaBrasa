@@ -9,30 +9,18 @@
 
             <div class="widget-content">
                 <div class="row">
+                    @foreach($tables as $table)
                     <div class="col-sm-3">
                         <div class="card">
                             <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
-                                Mesa 1
+                                {{$table->name}}
                             </button>
                         </div>
                     </div>
+                    @endforeach                   
                     <div class="col-sm-3">
                         <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
-                                Mesa 2
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
-                                Mesa 3
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
+                            <button href="javascript:void(0);" class="boton_del text-center" data-toggle="modal" data-target="#theModalSale" type="button">
                                 Delivery
                             </button>
                         </div>
@@ -129,6 +117,24 @@
       outline: none!important;
       
     }
+
+    .boton_del{
+      
+      padding: 40px;
+      font-family: arial;
+      text-transform: uppercase;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-weight: 800;
+      font-size: 25px;
+      color: black;
+      background-color: #1785ce;
+      border-radius: 15px;
+      border: none!important;
+      outline: none!important;
+      
+    }
+
     .boton_2:hover{
       color: #000000;
       background-color: #00862d;
