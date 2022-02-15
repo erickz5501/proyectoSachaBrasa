@@ -12,7 +12,7 @@
                     @foreach($tables as $table)
                     <div class="col-sm-3">
                         <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
+                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button" wire:click.prevent="selectTable({{$table->id}})" >
                                 {{$table->name}}
                             </button>
                         </div>

@@ -3,7 +3,7 @@
       <div class="modal-content">
         <div class="modal-header bg-dark">
             <h5 class="modal-title text-white">
-                Mesa N° <span>1</span>
+                Mesa N° <span>{{$selectTable_id}}</span>
             </h5>
             <h6 class="text-center text-warning" wire:loading >Por favor espere</h6>
         </div>

@@ -14,7 +14,7 @@ class PosController extends Component
 
     use WithPagination;
 
-    public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $pagetitle, $componentName, $cart=[], $itemsQuantity;
+    public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $selectTable_id, $pagetitle, $componentName, $cart=[], $itemsQuantity;
     private $pagination = 10;
 
     
@@ -34,6 +34,14 @@ class PosController extends Component
     public function mount(){
         $this->pagetitle = 'Listados';
         $this->componentName = 'Ventas';
+    }
+
+    public function selectTable(Tables $table){
+        $this->selectTable_id = $table->id;
+    }
+
+    public function resetUI(){
+
     }
 
 }
