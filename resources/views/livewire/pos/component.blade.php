@@ -12,7 +12,7 @@
                     @foreach($tables as $table)
                     <div class="col-sm-3">
                         <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button" wire:click.prevent="selectTable({{$table->id}})" >
+                            <button href="javascript:void(0);" class="boton_2 text-center badge {{$table->status == 'OCUPADO' ? 'badge-danger' : 'badge-success'}} text-uppercase" data-toggle="modal" data-target="#theModalSale" type="button" wire:click.prevent="selectTable({{$table->id}})" >
                                 {{$table->name}}
                             </button>
                         </div>
@@ -53,7 +53,7 @@
       font-weight: 800;
       font-size: 25px;
       color: black;
-      background-color: #07ad3f;
+      
       border-radius: 15px;
       border: none!important;
       outline: none!important;
@@ -77,9 +77,25 @@
       
     }
 
-    .boton_2:hover{
-      color: #000000;
-      background-color: #00862d;
-      text-decoration: none;
+    .fullscreen-modal .modal-dialog {
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    }
+    @media (min-width: 768px) {
+    .fullscreen-modal .modal-dialog {
+        width: 750px;
+    }
+    }
+    @media (min-width: 992px) {
+    .fullscreen-modal .modal-dialog {
+        width: 970px;
+    }
+    }
+    @media (min-width: 1200px) {
+    .fullscreen-modal .modal-dialog {
+        width: 1170px;
+    }
     }
   </style>
