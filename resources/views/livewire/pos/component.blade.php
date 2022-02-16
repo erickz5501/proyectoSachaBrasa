@@ -12,7 +12,7 @@
                     @foreach($tables as $table)
                     <div class="col-sm-3">
                         <div class="card">
-                            <button href="javascript:void(0);" class="boton_2 text-center" data-toggle="modal" data-target="#theModalSale" type="button">
+                            <button href="javascript:void(0);" class="boton_2 text-center badge {{$table->status == 'OCUPADO' ? 'badge-danger' : 'badge-success'}} text-uppercase" data-toggle="modal" data-target="#theModalSale" type="button" wire:click.prevent="selectTable({{$table->id}})" >
                                 {{$table->name}}
                             </button>
                         </div>
@@ -26,64 +26,6 @@
                         </div>
                     </div>      
                 </div> 
-                <br><br>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="">
-                            <div class=""">
-                                <h4 class="cart-title">
-                                    <b> Productos </b>
-                                </h4>
-                            </div>
-                
-                            <div class="widget-content">
-                
-                                <ul class="nav nav-tabs">
-                                    @foreach($categories as $category)
-                                    <li class="nav-item">
-                                        <a data-toggle="tab" href="#cat{{$category->id}}" type="button" class="nav-link">{{$category->name}}</a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                                
-                                <div class="tab-content">
-                                    @foreach($categories as $category)
-                                    <div id="cat{{$category->id}}" class="tab-pane fade">
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-striped mt-1" style="text-align:center;">
-                                                <thead class="text-white" style=" background: #e05f1a ">
-                                                    <tr >
-                                                        <th class="table-th text-white text-center">Nombre</th>
-                                                        <th class="table-th text-white text-center">Descripción</th>
-                                                        <th class="table-th text-white text-center">Precio</th>
-                                                        <th class="table-th text-white text-center">Stock</th>
-                                                        <th class="table-th text-white text-center">Inv. Min</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                        @foreach($products as $product)
-                                                            @if($product->category->id == $category->id)
-                                                                <tr>
-                                                                    <td><h6> {{$product->name}}</h6></td>
-                                                                    <td ><h6 class="text-center"> {{$product->description}}</h6></td>
-                                                                    <td><h6 class="text-center">S/. {{$product->price}}</h6></td>
-                                                                    <td><h6 class="text-center"> {{$product->stock}} </h6></td>
-                                                                    <td><h6 class="text-center"> {{$product->alerts}} </h6></td>
-                                                                </tr>
-                                                             @endif
-                                                        @endforeach
-                                                </tbody>
-                                            </table>
-                                            {{-- {{$products->links()}} --}}
-                                        </div>
-                                    </div>
-                                @endforeach
-                                </div>
-            
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             
         </div>
@@ -111,7 +53,7 @@
       font-weight: 800;
       font-size: 25px;
       color: black;
-      background-color: #07ad3f;
+      
       border-radius: 15px;
       border: none!important;
       outline: none!important;
@@ -135,9 +77,25 @@
       
     }
 
-    .boton_2:hover{
-      color: #000000;
-      background-color: #00862d;
-      text-decoration: none;
+    .fullscreen-modal .modal-dialog {
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    }
+    @media (min-width: 768px) {
+    .fullscreen-modal .modal-dialog {
+        width: 750px;
+    }
+    }
+    @media (min-width: 992px) {
+    .fullscreen-modal .modal-dialog {
+        width: 970px;
+    }
+    }
+    @media (min-width: 1200px) {
+    .fullscreen-modal .modal-dialog {
+        width: 1170px;
+    }
     }
   </style>

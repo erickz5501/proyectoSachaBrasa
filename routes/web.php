@@ -26,6 +26,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Route::view('loginweb', 'login');
+// Route::post('/loginweb', function () { //Vista del login
+//     return request();
+// });
+
 Route::get('categories', CategoriesController::class); //Creamos el nombre de la ruta del componente y va a ejecutar la funcion render del controlador;
 Route::get('products', ProductsController::class);
 Route::get('coins', CoinsController::class);
