@@ -148,11 +148,17 @@ return [
 
     'attributes' => [
         'name' => 'nombre',
+        'last_name' => 'apellido',
         'description' => 'descripción',
         'price' => 'precio',
         'alerts' => 'inv. Min',
         'category_id' => 'categoria',
         'value' => 'valor',
+        'password' => 'contraseña',
+        'adress' => 'dirección',
+        'profile' => 'rol',
+        'status' => 'estado',
+        'phone' => 'Celular',
         'type' => 'Tipo'
     ],
 

@@ -50,9 +50,6 @@
                             <div class="col-md-8 offset-md-4">
                                 <input type="submit" value="Iniciar Sesión">
                                 </input >
-
-                                @if (Route::has('password.request'))
-                                @endif
                             </div>
                         </div>
                     </form>
