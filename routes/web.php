@@ -6,6 +6,7 @@ use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\PosController;
 use App\Http\Livewire\SettingsController;
+use App\Http\Livewire\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,5 @@ Route::get('products', ProductsController::class);
 Route::get('coins', CoinsController::class);
 Route::get('pos', PosController::class);
 Route::get('settings', SettingsController::class);
+Route::get('users', UsersController::class);
+//sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf cambios del gordo

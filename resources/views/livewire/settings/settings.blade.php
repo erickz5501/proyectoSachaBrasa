@@ -53,10 +53,22 @@
                      </div>
                      <div>
                         <ul class="list-group">
-                           <a href="">
+                           <a href="{{ url('users') }}">
                               <b>
                                  <li class="list-group-item">
-                                    Usuarios / Roles
+                                    Usuarios
+                              </b>
+                              <p>Creación, Modificación.</p>
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                     <div>
+                        <ul class="list-group">
+                           <a href="{{ url('users') }}">
+                              <b>
+                                 <li class="list-group-item">
+                                    Roles
                               </b>
                               <p>Creación, Modificación.</p>
                               </li>
