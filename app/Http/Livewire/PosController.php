@@ -7,6 +7,7 @@ use App\Models\Sale;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Tables;
+use App\Models\Denomination;
 use Livewire\WithPagination;
 
 class PosController extends Component
@@ -14,7 +15,7 @@ class PosController extends Component
 
     use WithPagination;
 
-    public $total, $items, $cash, $change, $status, $user_id, $search, $selected_id, $selectTable_id, $pagetitle, $componentName, $cart=[], $itemsQuantity;
+    public $total, $items, $cash, $change, $efectivo, $status, $user_id, $search, $selected_id, $selectTable_id, $pagetitle, $componentName, $cart=[], $denominations=[], $itemsQuantity;
     private $pagination = 10;
 
     
@@ -28,6 +29,7 @@ class PosController extends Component
         $products = Product::all();
         $categories = Category::all();
         $tables = Tables::all();
+        $this->denominations = Denomination::all();
         return view('livewire.pos.component', ['products'=>$products, 'categories'=>$categories, 'tables'=>$tables])->extends('layouts.theme.app')->section('content');
     }
 
