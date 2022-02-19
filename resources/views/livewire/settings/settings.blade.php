@@ -65,7 +65,7 @@
                      </div>
                      <div>
                         <ul class="list-group">
-                           <a href="{{ url('users') }}">
+                           <a href="{{ url('roles') }}">
                               <b>
                                  <li class="list-group-item">
                                     Roles

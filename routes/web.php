@@ -7,6 +7,7 @@ use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\PosController;
 use App\Http\Livewire\SettingsController;
 use App\Http\Livewire\UsersController;
+use App\Http\Livewire\RolesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,5 @@ Route::get('coins', CoinsController::class);
 Route::get('pos', PosController::class);
 Route::get('settings', SettingsController::class);
 Route::get('users', UsersController::class);
+Route::get('roles', RolesController::class);
 //sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf cambios del gordo

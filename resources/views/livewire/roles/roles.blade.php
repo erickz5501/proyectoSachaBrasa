@@ -23,36 +23,24 @@
                     <table class="table table-bordered table-striped mt-1" style="text-align:center;">
                         <thead class="text-white" style=" background: #e05f1a ">
                             <tr >
-                                <th class="table-th text-white">Nombre y Apellido</th>
-                                <th class="table-th text-white text-center">Dirección</th>
-                                <th class="table-th text-white text-center">Telefono</th>
-                                <th class="table-th text-white text-center">Email</th>
-                                <th class="table-th text-white text-center">Estado</th>
-                                <th class="table-th text-white text-center">Perfil</th>
+                                <th class="table-th text-white">N°</th>
+                                <th class="table-th text-white text-center">Nombre</th>
                                 <th class="table-th text-white text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if( count($data) > 0 )
-                                @foreach($data as $user)
+                            @if( count($roles) > 0 )
+                                @foreach($roles as $role)
                                     <tr>
                                         <td>
-                                        <h6> {{$user->name}} {{$user->last_name}}</h6>
+                                        <h6> {{$role->id}}</h6>
                                         </td>
-                                        <td ><h6 class="text-center"> {{$user->adress}}</h6></td>
-                                        <td><h6 class="text-center">{{$user->phone}}</h6></td>
-                                        <td><h6 class="text-center"> {{$user->email}} </h6></td>
-                                        <td class="texr-center">
-                                            <span class="badge {{$user->status == 'ACTIVO' ? 'badge-success' : 'badge-danger'}} text-uppercase">
-                                                {{$user->status}}
-                                            </span>    
-                                        </td>
-                                        <td><h6 class="text-center"> {{$user->profile}} </h6></td>
-                                        <td class="text-left">
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar" wire:click.prevent="Edit({{$user->id}})" >
+                                        <td><h6 class="text-center"> {{$role->name}}</h6></td>
+                                        <td class="text-center">
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar" wire:click.prevent="Edit({{$role->id}})" >
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar" onclick="Confirm(' {{$user->id}} ')" >
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar" onclick="Confirm('{{$role->id}}')" >
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -66,34 +54,44 @@
                             
                         </tbody>
                     </table>
-                    {{$data->links()}}
+                    {{$roles->links()}}
                 </div>
 
             </div>
         </div>
     </div>
-    @include('livewire.users.form')
+    @include('livewire.roles.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
         
-        window.livewire.on('user-added', msg => {//Abre el modal con la data del registro
+        window.livewire.on('rol-added', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
             noty(Msg);
         });
-        window.livewire.on('user-updated', msg => {//Abre el modal con la data del registro
+        window.livewire.on('rol-updated', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
             noty(Msg);
         });
-        window.livewire.on('user-deleted', msg => {//Abre el modal con la data del registro
+        window.livewire.on('rol-deleted', msg => {//Abre el modal con la data del registro
+            noty(Msg);
+        });
+        window.livewire.on('rol-error', msg => {//Abre el modal con la data del registro
             noty(Msg);
         });
         window.livewire.on('modal-show', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('show');
         });
-        window.livewire.on('user-withsales', msg => {//Abre el modal con la data del registro
+        window.livewire.on('rol-exists', msg => {//Abre el modal con la data del registro
             noty(Msg);
+        });
+        window.livewire.on('hide-modal', msg => {//Abre el modal con la data del registro
+            $('#theModal').modal('hide');
+            noty(Msg);
+        });
+        window.livewire.on('hidden.bs.modal', msg => {//Abre el modal con la data del registro
+            $('.er').css('display', 'none');
         });
     });
 

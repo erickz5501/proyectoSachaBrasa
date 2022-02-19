@@ -159,6 +159,7 @@ return [
         'profile' => 'rol',
         'status' => 'estado',
         'phone' => 'Celular',
+        'roleName' => 'rol',
         'type' => 'Tipo'
     ],
 
