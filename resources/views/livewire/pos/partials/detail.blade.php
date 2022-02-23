@@ -83,11 +83,11 @@
                             </li>
                             @endforeach
                         </ul>
-                        
+                        <br>
                         <div class="tab-content">
                             @foreach($categories as $category)
                             <div id="cat{{$category->id}}" class="tab-pane fade">
-                                <div class="table-responsive">
+                                {{-- <div class="table-responsive">
                                     <table class="table table-bordered table-striped mt-1" style="text-align:center;">
                                         <thead class="text-white" style=" background: #e05f1a ">
                                             <tr >
@@ -112,7 +112,28 @@
                                                 @endforeach
                                         </tbody>
                                     </table>
-                                    {{-- {{$products->links()}} --}}
+                                    
+                                </div> --}}
+                                <div class="row">
+                                    @foreach ($products as $product)
+                                        @if ($product->category->id == $category->id)
+                                            <div class="col-sm-4 card">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">{{ $product->name }}</h3>
+                                                    <span class="card-text">S/. {{ $product->price }}</span>
+                                                    <form action="" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <input type="hidden" value="{{ $product->id }}" name="id">
+                                                        <input type="hidden" value="{{ $product->name }}" name="name">
+                                                        <input type="hidden" value="{{ $product->price }}" name="price">
+                                                        <input type="hidden" value="1" name="quantity">
+                                                        <button class="btn btn-success rounded">Add To Cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                    
                                 </div>
                             </div>
                         @endforeach
