@@ -8,6 +8,7 @@ use App\Http\Livewire\PosController;
 use App\Http\Livewire\SettingsController;
 use App\Http\Livewire\UsersController;
 use App\Http\Livewire\RolesController;
+use App\Http\Livewire\PermisosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +40,5 @@ Route::get('pos', PosController::class);
 Route::get('settings', SettingsController::class);
 Route::get('users', UsersController::class);
 Route::get('roles', RolesController::class);
+Route::get('permisos', PermisosController::class);
 //sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf cambios del gordo

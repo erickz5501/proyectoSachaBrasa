@@ -24,23 +24,23 @@
                         <thead class="text-white" style=" background: #e05f1a ">
                             <tr >
                                 <th class="table-th text-white">N°</th>
-                                <th class="table-th text-white text-center">Nombre</th>
+                                <th class="table-th text-white text-center">Descripción</th>
                                 <th class="table-th text-white text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if( count($roles) > 0 )
-                                @foreach($roles as $role)
+                            @if( count($permisos) > 0 )
+                                @foreach($permisos as $permiso)
                                     <tr>
                                         <td>
-                                        <h6> {{$role->id}}</h6>
+                                        <h6> {{$permiso->id}}</h6>
                                         </td>
-                                        <td><h6 class="text-center"> {{$role->name}}</h6></td>
+                                        <td><h6 class="text-center"> {{$permiso->name}}</h6></td>
                                         <td class="text-center">
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar" wire:click.prevent="Edit({{$role->id}})" >
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Editar" wire:click.prevent="Edit({{$permiso->id}})" >
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar" onclick="Confirm('{{$role->id}}')" >
+                                            <a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Eliminar" onclick="Confirm('{{$permiso->id}}')" >
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -54,36 +54,36 @@
                             
                         </tbody>
                     </table>
-                    {{$roles->links()}}
+                    {{$permisos->links()}}
                 </div>
 
             </div>
         </div>
     </div>
-    @include('livewire.roles.form')
+    @include('livewire.permisos.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
         
-        window.livewire.on('rol-added', msg => {//Abre el modal con la data del registro
+        window.livewire.on('permiso-added', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
             noty(Msg);
         });
-        window.livewire.on('rol-updated', msg => {//Abre el modal con la data del registro
+        window.livewire.on('permiso-updated', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('hide');
             noty(Msg);
         });
-        window.livewire.on('rol-deleted', msg => {//Abre el modal con la data del registro
+        window.livewire.on('permiso-deleted', msg => {//Abre el modal con la data del registro
             noty(Msg);
         });
-        window.livewire.on('rol-error', msg => {//Abre el modal con la data del registro
+        window.livewire.on('permiso-error', msg => {//Abre el modal con la data del registro
             noty(Msg);
         });
         window.livewire.on('modal-show', msg => {//Abre el modal con la data del registro
             $('#theModal').modal('show');
         });
-        window.livewire.on('rol-exists', msg => {//Abre el modal con la data del registro
+        window.livewire.on('permiso-exists', msg => {//Abre el modal con la data del registro
             noty(Msg);
         });
         window.livewire.on('hide-modal', msg => {//Abre el modal con la data del registro

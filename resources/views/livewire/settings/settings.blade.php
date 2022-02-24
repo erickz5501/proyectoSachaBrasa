@@ -97,10 +97,10 @@
                      </div>
                      <div>
                         <ul class="list-group">
-                           <a href="">
+                           <a href="{{ url('categories') }}">
                               <b>
                                  <li class="list-group-item">
-                                    Áreas de producción
+                                    Categorias
                               </b>
                               <p>Creación, Modificación.</p>
                               </li>
@@ -141,10 +141,22 @@
                      </div>
                      <div>
                         <ul class="list-group">
-                           <a href="">
+                           <a href="{{url('permisos')}}">
                               <b>
                                  <li class="list-group-item">
-                                    Impresoras
+                                    Permisos
+                              </b>
+                              <p>Creación, Modificación.</p>
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                     <div>
+                        <ul class="list-group">
+                           <a href="{{url('coins')}}">
+                              <b>
+                                 <li class="list-group-item">
+                                    Monedas
                               </b>
                               <p>Creación, Modificación.</p>
                               </li>

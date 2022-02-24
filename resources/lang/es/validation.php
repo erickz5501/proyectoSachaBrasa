@@ -160,6 +160,7 @@ return [
         'status' => 'estado',
         'phone' => 'Celular',
         'roleName' => 'rol',
+        'permissionName' => 'permiso',
         'type' => 'Tipo'
     ],
 
