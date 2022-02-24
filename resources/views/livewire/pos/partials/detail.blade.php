@@ -20,7 +20,7 @@
                                 <thead class="text-white" style=" background: #3B3F5C " >
                                     <tr>
                                     <th width="10%"></th>
-                                    <th class="table-th text-left text-white">DESCRIPCIÓN</th>
+                                    <th class="table-th text-left text-white">Nombre</th>
                                     <th class="table-th text-left text-white">PRECIO</th>
                                     <th width="13%" class="table-th text-left text-white">CANT</th>
                                     <th class="table-th text-left text-white">IMPORTE</th>
@@ -121,14 +121,11 @@
                                                 <div class="card-body">
                                                     <h3 class="card-title">{{ $product->name }}</h3>
                                                     <span class="card-text">S/. {{ $product->price }}</span>
-                                                    <form action="" method="POST" enctype="multipart/form-data">
-                                                        @csrf
                                                         <input type="hidden" value="{{ $product->id }}" name="id">
                                                         <input type="hidden" value="{{ $product->name }}" name="name">
                                                         <input type="hidden" value="{{ $product->price }}" name="price">
                                                         <input type="hidden" value="1" name="quantity">
-                                                        <button class="btn btn-success rounded">Add To Cart</button>
-                                                    </form>
+                                                        <button class="btn btn-success rounded" wire:click.prevent="addToCart({{$product}})">Add To Cart</button> 
                                                 </div>
                                             </div>
                                         @endif
